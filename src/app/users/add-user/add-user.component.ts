@@ -7,6 +7,7 @@ import { UserService } from 'src/app/services/user.service';
   templateUrl: './add-user.component.html',
   styleUrls: ['./add-user.component.scss']
 })
+
 export class AddUserComponent implements OnInit {
 
   addUserForm: FormGroup = new FormGroup({});
@@ -20,7 +21,7 @@ export class AddUserComponent implements OnInit {
       'phone' : new FormControl('')
     })
   }
-
+  
   createuser(){
     this.UserService.addUser(this.addUserForm.value).subscribe(data=>{
       console.log("user created");
